@@ -28,3 +28,63 @@ export const indexGet = async (req, res) => {
     console.log(error);
   }
 };
+
+//Upgrade data
+export const indexPut = (req, res) => {
+  let Id = req.params.id;
+  let newData = req.body; // in this case will can be the password
+  Product.findByIdAndUpdate(Id, newData, (err, upgradeData) => {
+    try {
+      if (!upgradeData) {
+        res.status(200).send(errors.state500);
+      } else {
+        res.status(200).send({
+          status: "Upgrade user!",
+          data: newData,
+          statusCode: 200,
+        });
+      }
+    } catch (err) {
+      res.status(500).send(errors.state500);
+    }
+  });
+};
+
+//Delete Data by ID
+export const indexDelete = (req, res) => {
+  let dataId = req.params.id;
+  Product.findByIdAndDelete(dataId, (err, deleteData) => {
+    try {
+      if (!deleteData) {
+        res.status(200).send(errors.state400);
+      } else {
+        res.status(200).send({
+          status: `Delete user idetify by ID: ${dataId}`,
+          Data: deleteData,
+          statusCode: 200,
+        });
+      }
+    } catch (err) {
+      res.status(500).send(errors.state500);
+    }
+  });
+};
+
+//Delete all users
+export const indexDeleteAll = async (req, res) => {
+  await Product.remove((err, findedData) => {
+    try {
+      if (!findedData) {
+        res.status(200).send(errors.state400);
+      } else {
+        res.status(200).send({
+          status: "Drop all data saved",
+          Data: findedData,
+          statusCode: 200,
+        });
+      }
+    } catch (err) {
+      res.status(500).send(errors.state500);
+    }
+  });
+};

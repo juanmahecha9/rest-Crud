@@ -1,5 +1,9 @@
 # YUEM-CLI by Juanmahecha9
 
+# For to running the app with a sheell file:
+
+You can start the project using a file with bash code, in this you can choose the npm script for run the app, only you can need execute the next command line: `sh scripts/run.sh`
+
 ## What is it?
 
 Yuem is a project that focuses on generating a generic Node.js project, where its main goal is time optimization for creating small projects, using the latest versions of ecmascript 6 with the help of babel, which is a free and open source JavaScript transcompiler that is mainly used to convert ECMAScript 2016+ code into a backwards compatible JavaScript version that can run older JavaScript engines.
