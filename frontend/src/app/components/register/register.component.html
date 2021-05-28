@@ -1,1 +1,61 @@
-<p>register works!</p>
+<main>
+    <div class="tag-container">
+        <div class="margent">
+            <div class="contenedorForm">
+                <form class="formulario" [formGroup]="formGroup">
+                    <h1>Registro</h1>
+                    <div class="contenedor">
+
+                        <mat-form-field class="example-full-width">
+                            <div class="input-contenedor">
+                                <mat-icon matSuffix>rowing</mat-icon>
+                                <input type="text" placeholder="Name" name="nombre" id="nombre" formControlName="name">
+                            </div>
+                        </mat-form-field>
+                        <ng-container *ngIf="formErrors.name" class="err-msg">
+                            The name is required
+                        </ng-container>
+
+                        <mat-form-field class="example-full-width">
+                            <div class="input-contenedor">
+                                <mat-icon matSuffix>rowing</mat-icon>
+                                <input type="text" placeholder="User Name" name="nombre" id="nombre"
+                                    formControlName="userName">
+                            </div>
+                        </mat-form-field>
+                        <ng-container *ngIf="formErrors.name" class="err-msg">
+                            The user name is required
+                        </ng-container>
+
+                        <mat-form-field class="example-full-width">
+                            <div class="input-contenedor">
+                                <mat-icon matSuffix>alternate_email</mat-icon>
+                                <input required type="text" placeholder="E-Mail" name="email" id="email"
+                                    formControlName="email">
+                            </div>
+                        </mat-form-field>
+                        <ng-container *ngIf="formErrors.name" class="err-msg">
+                            The email is required
+                        </ng-container>
+
+                        <mat-form-field class="example-full-width">
+                            <div class="input-contenedor">
+                                <mat-icon matSuffix>check_circle</mat-icon>
+                                <input type="password" placeholder="Password" name="password" id="password"
+                                    formControlName="password">
+                            </div>
+                        </mat-form-field>
+                        <ng-container *ngIf="formErrors.name" class="err-msg">
+                            The password is required
+                        </ng-container>
+
+                        <input type="submit" value="Registrate" class="button" id="btn" (click)="submit()">
+                        <p>By registering, you agree to our Terms of Use, Privacy Policy and Data Protection.
+                            data protection.</p>
+                        <p>Already have an account? <a class="link" routerLink="/login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

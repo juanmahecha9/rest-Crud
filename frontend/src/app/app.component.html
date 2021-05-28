@@ -1,3 +1,79 @@
+<input type="checkbox" id="nav-toggle">
 
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <h1> <span class="fab fa-asymmetrik"> </span> <span></span>
+        </h1>
+    </div>
 
-<router-outlet></router-outlet>
+    <div class="sidebar-menu">
+        <ul>
+            <li>
+                <a routerLink="/dashboard-products" class="active">
+                    <span class="fas fa-tachometer-alt"></span>
+                    <span>Show data</span>
+                </a>
+            </li>
+            <ng-container *ngIf="!auth.loggedIn(); else cerrarSesion">
+                <li>
+                    <a routerLink="/register">
+                        <span class="fas fa-users"></span>
+                        <span>Register</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/login">
+                        <span class="fas fa-stream"></span>
+                        <span>Login</span>
+                    </a>
+                </li>
+            </ng-container>
+            <li>
+                <a routerLink="/contact-us">
+                    <span class="fas fa-boxes"></span>
+                    <span>Contact us</span>
+                </a>
+            </li>
+            <ng-template #cerrarSesion>
+                <li (click)="cerrar()">
+                    <a href="#">
+                        <span class="fas fa-shopping-cart"></span>
+                        <span>Close.</span>
+                    </a>
+                </li>
+            </ng-template>
+        </ul>
+
+    </div>
+</div>
+
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="fas fa-bars"></span>
+            </label>
+            <br>
+            <a href="https://www.github.com/juanmahecha9">Juanmahecha9</a>
+        </h2>
+
+        <div class="search-wrapper">
+            <span class="fas fa-search"> </span>
+            <input type="search" placeholder="Search..." />
+
+        </div>
+
+        <div class="user-wrapper">
+            <img src="assets/img/pixlr-bg-result.png" width="35%" alt="profile-img">
+            <div class="">
+                <h4>Colombia</h4>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

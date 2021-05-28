@@ -1,1 +1,33 @@
-<p>dashboard works!</p>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr class="text-center text-danger">
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" [ngStyle]="{'text-decoration':option.status === true ? 'line-through' : 'none' }"
+                *ngFor="let option of dataProduct">
+                <th scope="row">{{option.name}}</th>
+                <th scope="row">{{option.category}}</th>
+                <th scope="row">{{option.quantity}}</th>
+                <th scope="row">{{option.price}}</th>
+
+                <th>
+                    <button [disabled]="disabled" class="m-1 btn btn-outline-info">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button [disabled]="disabled" class="m-1 btn btn-outline-danger">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </th>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

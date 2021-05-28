@@ -30,6 +30,11 @@ import {
 //varibale to api init in authtentication rules
 const mongoRoute = "/api/rest/mongo";
 
+//Proxy router
+router.get("/store/home", (req,res)=>{
+  res.send("In home page.")
+})
+
 //Test
 router.get("/", indexCtrl.renderYuem);
 router.get("/yuem", indexCtrl.response);
