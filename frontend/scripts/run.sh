@@ -106,7 +106,7 @@ serve)
     ng serve --port 4200
     break
     ;;
-clean)
+proxy)
     echo "Running with proxy"
     node_modules/\@angular/cli/bin/ng serve --project frontend --proxy-config proxy.conf.json --base-href=/store/
     break
