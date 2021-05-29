@@ -29,6 +29,12 @@ export const indexGet = async (req, res) => {
   }
 };
 
+export const indexGetId = async (req, res) => {
+  let id = req.params.id;
+  const product = await Product.findById(id);
+  res.send(product);
+};
+
 //Upgrade data
 export const indexPut = (req, res) => {
   let Id = req.params.id;

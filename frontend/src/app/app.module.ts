@@ -48,6 +48,7 @@ import { ContactUsComponent } from "./components/contact-us/contact-us.component
 import { FormsModule } from "@angular/forms";
 import { AuthGuard } from "./guards/auth.guard";
 import { TokenService } from "./services/token.service";
+import { AddComponent } from './components/add/add.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { TokenService } from "./services/token.service";
     EditProductComponent,
     HomeComponent,
     ContactUsComponent,
+    AddComponent,
   ],
   imports: [
     BrowserModule,

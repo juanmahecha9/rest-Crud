@@ -31,10 +31,16 @@
             <li>
                 <a routerLink="/contact-us">
                     <span class="fas fa-boxes"></span>
-                    <span>Contact us</span>
+                    <span>Contact</span>
                 </a>
             </li>
             <ng-template #cerrarSesion>
+                <li>
+                    <a routerLink="/add">
+                        <span class="fas fa-boxes"></span>
+                        <span>Add</span>
+                    </a>
+                </li>
                 <li (click)="cerrar()">
                     <a href="#">
                         <span class="fas fa-shopping-cart"></span>
@@ -58,21 +64,16 @@
         </h2>
 
         <div class="search-wrapper">
-            <span class="fas fa-search"> </span>
-            <input type="search" placeholder="Search..." />
-
+            <span class="fas fa-search"> Colombia </span>
         </div>
 
         <div class="user-wrapper">
             <img src="assets/img/pixlr-bg-result.png" width="35%" alt="profile-img">
-            <div class="">
-                <h4>Colombia</h4>
-            </div>
         </div>
     </header>
 
     <main>
-        <div class="container">
+        <div class="container ">
             <router-outlet></router-outlet>
         </div>
     </main>

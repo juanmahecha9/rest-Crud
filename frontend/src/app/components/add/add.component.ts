@@ -11,11 +11,11 @@ import { Product } from "src/app/models/product";
 import { DataService } from "src/app/services/data.service";
 
 @Component({
-  selector: "app-edit-product",
-  templateUrl: "./edit-product.component.html",
-  styleUrls: ["./edit-product.component.scss"],
+  selector: "app-add",
+  templateUrl: "./add.component.html",
+  styleUrls: ["./add.component.scss"],
 })
-export class EditProductComponent implements OnInit {
+export class AddComponent implements OnInit {
   public mode: string = "form";
   formGroup: FormGroup = this._formBuilder.group({});
   public idPage!: string;
@@ -42,9 +42,7 @@ export class EditProductComponent implements OnInit {
     private route: ActivatedRoute,
     private dataService: DataService,
     private _formBuilder: FormBuilder
-  ) {
-    this.getId();
-  }
+  ) {}
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -167,28 +165,16 @@ export class EditProductComponent implements OnInit {
   }
 
   onSubmit() {
-    this.dataService.indexPut(this.idPage, this.data).subscribe(
-      res => {
-        console.log(res)
-        this.router.navigate(['/dashboard-products']);
+    this.dataService.indexPost(this.data).subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigate(["/dashboard-products"]);
       },
-      err => console.log(err)
-    )
+      (err) => console.log(err)
+    );
   }
 
   onBack() {
-    this.mode = "form"
-  }
-
-  getId() {
-    this.idPage = this.route.snapshot.params["id"];
-    this.dataService.indexGetId(this.idPage).subscribe(
-      (res: Product) => {
-        this.dataProduct = res;
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    this.mode = "form";
   }
 }

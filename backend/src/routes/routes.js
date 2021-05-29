@@ -15,6 +15,7 @@ import {
   indexPut,
   indexDelete,
   indexDeleteAll,
+  indexGetId,
 } from "../controller/mongo/products/products.controller";
 //Import routes auth mongoDb
 import {
@@ -31,9 +32,9 @@ import {
 const mongoRoute = "/api/rest/mongo";
 
 //Proxy router
-router.get("/store/home", (req,res)=>{
-  res.send("In home page.")
-})
+router.get("/store/home", (req, res) => {
+  res.send("In home page.");
+});
 
 //Test
 router.get("/", indexCtrl.renderYuem);
@@ -43,6 +44,7 @@ router.post("/testPostMongoDb", testDbPost);
 
 //mongo product
 router.get(`${mongoRoute}/get`, indexGet);
+router.get(`${mongoRoute}/get/:id`, indexGetId);
 router.post(`${mongoRoute}/post`, indexPost);
 router.put(`${mongoRoute}/put/:id`, indexPut);
 router.delete(`${mongoRoute}/delete/:id`, indexDelete);

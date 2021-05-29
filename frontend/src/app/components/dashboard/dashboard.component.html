@@ -19,10 +19,10 @@
                 <th scope="row">{{option.price}}</th>
 
                 <th>
-                    <button [disabled]="disabled" class="m-1 btn btn-outline-info">
+                    <button [disabled]="disabled" class="m-1 btn btn-outline-info" (click)="editData(option._id)">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button [disabled]="disabled" class="m-1 btn btn-outline-danger">
+                    <button [disabled]="disabled" class="m-1 btn btn-outline-danger" (click)="deleteData(option._id)">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </th>

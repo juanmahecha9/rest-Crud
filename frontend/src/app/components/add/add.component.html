@@ -10,7 +10,7 @@
 
                 <mat-form-field class="example-full-width">
                     <mat-label>Name</mat-label>
-                    <input class="text-center" [(ngModel)]="dataProduct.name" type="text" matInput placeholder=""
+                    <input class="text-center" type="text" matInput placeholder=""
                         formControlName="name" #name>
                     <mat-icon matSuffix>rowing</mat-icon>
                 </mat-form-field>
@@ -19,7 +19,7 @@
                 </div>
                 <mat-form-field class="example-full-width">
                     <mat-label>Category</mat-label>
-                    <input class="text-center" [(ngModel)]="dataProduct.category" type="text" matInput placeholder=""
+                    <input class="text-center" type="text" matInput placeholder=""
                         formControlName="category" #name>
                     <mat-icon matSuffix>category</mat-icon>
                 </mat-form-field>
@@ -28,7 +28,7 @@
                 </div>
                 <mat-form-field class="example-full-width">
                     <mat-label>Quantity</mat-label>
-                    <input class="text-center" [(ngModel)]="dataProduct.quantity" type="number" matInput placeholder=""
+                    <input class="text-center" type="number" matInput placeholder=""
                         formControlName="quantity" #name>
                     <mat-icon matSuffix>format_list_numbered</mat-icon>
                 </mat-form-field>
@@ -37,15 +37,13 @@
                 </div>
                 <mat-form-field class="example-full-width">
                     <mat-label>Price $</mat-label>
-                    <input class="text-center" [(ngModel)]="dataProduct.price" type="number" matInput placeholder=""
+                    <input class="text-center" type="number" matInput placeholder=""
                         formControlName="price" #name>
                     <mat-icon matSuffix>money_off</mat-icon>
                 </mat-form-field>
                 <div *ngIf="formErrors.price" class="err-msg">
                     The price is required
                 </div>
-
-
 
                 <div class="row justity-content-center">
                     <div class="btn-group" role="group" aria-label="Basic example">
