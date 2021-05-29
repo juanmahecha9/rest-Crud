@@ -1,5 +1,4 @@
 <div class="container">
-  
     <div class="row justify-content-center">
         <table mat-table [dataSource]="dataProduct" matSort class="mat-elevation-z8">
 
@@ -51,8 +50,13 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         </table>
-
+        <ng-container *ngIf="dataExist">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <app-message-data-null></app-message-data-null>
+                </div>
+            </div>
+        </ng-container>
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-
     </div>
 </div>

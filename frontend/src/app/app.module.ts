@@ -49,6 +49,7 @@ import { FormsModule } from "@angular/forms";
 import { AuthGuard } from "./guards/auth.guard";
 import { TokenService } from "./services/token.service";
 import { AddComponent } from './components/add/add.component';
+import { MessageDataNullComponent } from './components/message-data-null/message-data-null.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { AddComponent } from './components/add/add.component';
     HomeComponent,
     ContactUsComponent,
     AddComponent,
+    MessageDataNullComponent,
   ],
   imports: [
     BrowserModule,

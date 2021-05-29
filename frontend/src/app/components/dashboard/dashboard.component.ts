@@ -33,6 +33,8 @@ export class DashboardComponent implements OnInit {
   ];
   dataSource = new MatTableDataSource();
 
+  dataExist!: boolean;
+
   constructor(
     private dataService: DataService,
     private router: Router,
@@ -53,6 +55,13 @@ export class DashboardComponent implements OnInit {
     this.dataService.indexGet().subscribe(
       (res: Product[]) => {
         this.dataProduct = res;
+        if (res.length == 0) {
+          console.log("empty");
+          this.dataExist = true;
+        } else {
+          console.log("The array has data!");
+          this.dataExist = false;
+        }
       },
       (err) => {
         console.log(err);

@@ -1,0 +1,12 @@
+<div class="container">
+    <h1 class="text-center text-danger">
+        The product list is empty!
+    </h1>
+    <p class="text-center pd-3">
+        If you need to add any product, please do click in the next button:
+    </p>
+    <div class="row justify-content-center">
+        <button [disabled]="!auth.loggedIn()" class="btn btn-outline-info" (click)="add()">Add product</button>
+    </div>
+    <p *ngIf="!auth.loggedIn()" class="text-center pd-3 text-muted">To be able to add you need to be registered!</p>
+</div>
