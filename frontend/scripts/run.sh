@@ -108,7 +108,7 @@ serve)
     ;;
 proxy)
     echo "Running with proxy"
-    node_modules/\@angular/cli/bin/ng serve --project frontend --proxy-config proxy.conf.json --base-href=/store/
+    node_modules/\@angular/cli/bin/ng serve --project frontend --proxy-config proxy.conf.json --base-href=/
     break
     ;;
 

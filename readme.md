@@ -23,5 +23,5 @@ Remember that:
 
 When you run the frontend server, you can run this in two ways, server way or proxy way, the paths are:
 
-1. proxy: http://localhost:4200/store/
+1. proxy: http://localhost:4200/
 2. server: http://localhost:4200/

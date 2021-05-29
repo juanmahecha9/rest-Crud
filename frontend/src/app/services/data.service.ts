@@ -17,7 +17,7 @@ export class DataService {
     return this.http.get<Product[]>(this.url + "get");
   }
   indexGetId(id: any) {
-    return this.http.get<Product>(this.url + "get/" + id);
+    return this.http.get<any>(this.url + "get/" + id);
   }
   indexPost(data: Product) {
     return this.http.post(this.url + "post", data);

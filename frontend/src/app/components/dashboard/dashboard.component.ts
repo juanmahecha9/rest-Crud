@@ -1,10 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { Product } from "src/app/models/product";
 import { AuthService } from "src/app/services/auth.service";
 import { DataService } from "src/app/services/data.service";
 
+import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
 
 @Component({
   selector: "app-dashboard",
@@ -14,6 +22,16 @@ import { MatTableDataSource } from "@angular/material/table";
 export class DashboardComponent implements OnInit {
   public dataProduct!: Product[];
   public disabled: boolean = false;
+
+  //Table
+  displayedColumns: string[] = [
+    "name",
+    "category",
+    "quantity",
+    "price",
+    "actions",
+  ];
+  dataSource = new MatTableDataSource();
 
   constructor(
     private dataService: DataService,
@@ -35,7 +53,6 @@ export class DashboardComponent implements OnInit {
     this.dataService.indexGet().subscribe(
       (res: Product[]) => {
         this.dataProduct = res;
-        //console.log(this.dataProduct);
       },
       (err) => {
         console.log(err);
@@ -56,5 +73,12 @@ export class DashboardComponent implements OnInit {
         (err) => console.log(err)
       );
     }
+  }
+
+  //Table
+  @ViewChild(MatSort) sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 }
