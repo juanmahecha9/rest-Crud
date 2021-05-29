@@ -14,6 +14,10 @@ export class AppComponent {
   displayNavbar!: string;
   title = "frontend";
   constructor(public auth: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+  }
+
   uuid() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (
       c
@@ -25,7 +29,15 @@ export class AppComponent {
   }
 
   cerrar() {
-    this.auth.cerrarS();
-    alert("Exit!...");
+    if (confirm("Close session?")) {
+      this.auth.cerrarS();
+    } else {
+    }
+  }
+  timeCerrar() {
+    setTimeout(() => {
+      this.auth.cerrarS();
+    }),
+      1000;
   }
 }

@@ -24,6 +24,7 @@
     z-index: 100;
     background: var(--main-color);
     transition: width 300ms;
+    background-color: #234bce;
 }
 .sidebar-brand {
     height: 90px;
@@ -68,7 +69,7 @@
     padding-right: 1rem;
 }
 .sidebar-menu a.active {
-    background: #fff;
+    background: rgb(249, 247, 247);
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: var(--main-color);
@@ -83,22 +84,21 @@
 }
 .main-content {
     transition: margin-left 300ms;
-    margin-left: 250px;
+    margin-left: 200px;
 }
 header {
-    background: #fff;
     height: 100px;
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     box-shadow: 12px 10px 5px rgba(0, 0, 0, 0.2);
     position: fixed;
-    left: 250px;
+    left: 200px;
     top: 0;
     z-index: 100;
-    width: calc(100% - 345px);
+    width: calc(100%);
     transition: left 300ms;
-    border: #000 1px solid;
+    border: #000 3px solid;
 }
 
 #nav-toggle {
@@ -313,7 +313,7 @@ td .status {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1400px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -364,7 +364,7 @@ td .status {
     #nav-toggle:checked + .sidebar {
         left: 0 !important;
         z-index: 100;
-        width: 250px;
+        width: 200px;
     }
 
     #nav-toggle:checked .sidebar .sidebar-brand,
