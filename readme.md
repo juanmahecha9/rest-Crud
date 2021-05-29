@@ -2,7 +2,9 @@
 
 ## Before to clone the repository:
 
-1. Execute the follow command line to install the dependencies into the backend
+1. Execute the follow command line to install the dependencies into the backend `sh scripts/backend_modules.sh`
+2. Execute the follow command line to install the dependencies into the frontend `sh scripts/frontend_modules.sh`
+
 
 ## How to run the projects?
 
