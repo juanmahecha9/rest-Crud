@@ -1,3 +1,7 @@
+# By Juanmahecha9, project full
+
+Its important read the readme files into the backend and frontend directories, cause, this have more information to the program.
+
 # Project
 
 ## Before to clone the repository:
