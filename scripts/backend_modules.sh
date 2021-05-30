@@ -11,7 +11,7 @@ function main() { (
         sh scripts/run.sh
     else
         echo "node modules download...."
-        npm install --save bcrypt consign cors express express-myconnection fs json jsonwebtoken morgan nodemailer path pg pg-hstore rimraf sequelize
+        npm install --save bcrypt consign cors express express-myconnection firebase-admin fs json jsonwebtoken morgan nodemailer path pg pg-hstore rimraf sequelize
         npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env nodemon
         echo "Download success..."
         echo "..................."
